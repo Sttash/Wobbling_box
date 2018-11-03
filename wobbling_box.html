@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <style>
+    #container {
+        width: 200px;
+        height: 200px;
+        background: gray;
+        position: relative;
+    }
+    #box {
+        width: 50px;
+        height: 50px;
+        background: brown;
+        position: absolute;
+    }
+    </style>
+    <div id="container">
+        <div id="box"></div>
+    </div>
+    <script>
+        var t = setInterval(wobble, 50);
+        // starting position
+        var posX = 75, posY = 75;
+        var minShift = -1, maxShift = 1;
+        // box element
+        var box = document.getElementById("box");
+                
+        function wobble() {
+            box.style.left = (posX + (Math.floor(Math.random() * (maxShift - minShift)) + minShift)) + "px";
+            box.style.top = (posY + (Math.floor(Math.random() * (maxShift - minShift)) + minShift)) + "px";
+        }
+    </script>
+</body>
+</html>
